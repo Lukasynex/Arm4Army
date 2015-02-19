@@ -3,5 +3,7 @@
 
     <string name="app_name">Arm4Army</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="disconnect">rozłącz</string>
+        <string name="connect">połącz</string>
+    
 </resources>
