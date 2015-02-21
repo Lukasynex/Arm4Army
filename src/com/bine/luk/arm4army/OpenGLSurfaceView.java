@@ -22,41 +22,41 @@ public class OpenGLSurfaceView extends GLSurfaceView {
 		super(context, attrs);
 	}
 
-	@Override
-	public boolean onTouchEvent(MotionEvent e) {
-		if (e != null) {
-			float x = e.getX();
-			float y = e.getY();
-
-			switch (e.getAction()) {
-			case MotionEvent.ACTION_MOVE:
-
-				float dx = x - mPreviousX;
-				float dy = y - mPreviousY;
-
-				if (y > this.getHeight() / 2) {
-					dx = dx * -1;
-				}
-				if (x < this.getWidth() / 2) {
-					dy = dy * -1;
-				}
-
-				if (Math.abs(dx) > Math.abs(3 * dy))
-
-					mRenderer.setAngleZ(mRenderer.getAngleZ()
-							+ ((-dx) * TOUCH_SCALE_FACTOR));
-				else if (Math.abs(dy) > Math.abs(3 * dx))
-					mRenderer.setAngleY(mRenderer.getAngleY()
-							+ ((dy) * TOUCH_SCALE_FACTOR));
-			}
-
-			mPreviousX = x;
-			mPreviousY = y;
-			return true;
-		} else {
-			return super.onTouchEvent(e);
-		}
-	}
+//	@Override
+//	public boolean onTouchEvent(MotionEvent e) {
+//		if (e != null) {
+//			float x = e.getX();
+//			float y = e.getY();
+//
+//			switch (e.getAction()) {
+//			case MotionEvent.ACTION_MOVE:
+//
+//				float dx = x - mPreviousX;
+//				float dy = y - mPreviousY;
+//
+//				if (y > this.getHeight() / 2) {
+//					dx = dx * -1;
+//				}
+//				if (x < this.getWidth() / 2) {
+//					dy = dy * -1;
+//				}
+//
+//				if (Math.abs(dx) > Math.abs(3 * dy))
+//
+//					mRenderer.setAngleZ(mRenderer.getAngleZ()
+//							+ ((-dx) * TOUCH_SCALE_FACTOR));
+//				else if (Math.abs(dy) > Math.abs(3 * dx))
+//					mRenderer.setAngleY(mRenderer.getAngleY()
+//							+ ((dy) * TOUCH_SCALE_FACTOR));
+//			}
+//
+//			mPreviousX = x;
+//			mPreviousY = y;
+//			return true;
+//		} else {
+//			return super.onTouchEvent(e);
+//		}
+//	}
 
 	// Hides superclass method.
 	public void setRenderer(LukasynoRenderer renderer) {
